@@ -3,6 +3,11 @@ Eyantra 2021 project theme Virgi Bot
 ### Project Working Video: https://www.youtube.com/watch?v=ZQNKmDvd1Eg
 
 Our work:
+### Initial Position:
+<img src="/image_readme/initial.png">
+<img src="/image_readme/bot1+shelf.png">
+<img src="/image_readme/bot2.png">
+
 ### Making Inventory :
 Every item in warehouse has a QR code on it so by using camera and pyzbar(python library for decoding QR code) update inventory sheet on GSheet.
 
