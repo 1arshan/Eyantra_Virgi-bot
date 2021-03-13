@@ -16,4 +16,5 @@ Then another bot will pick item from conveyor and place them on different bin fo
 ### Creating Dashboard:
 Realtime information regarding inventory,incoming order, dispatch and shipped time is updated on Dashboard.
 
-### Use: Robot Operating System for controlling bot and gazebo for simulation ,Python :for operating ROS ; Javascript and HTML for creating Dashboard.
+### Use: 
+Robot Operating System for controlling bot and gazebo for simulation ,Python :for operating ROS ; Javascript and HTML for creating Dashboard.
