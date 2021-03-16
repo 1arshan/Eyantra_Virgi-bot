@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Ur5Moveit - VB#1637</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">VB#1637</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../index.html">Home</a>
+                            </li>
+                            <li >
+                                <a href="../camera_one/index.html">CameraOne</a>
+                            </li>
+                            <li >
+                                <a href="../iot_camera/index.html">IotCamera</a>
+                            </li>
+                            <li >
+                                <a href="../ur5_1_controller/index.html">Ur5_1</a>
+                            </li>
+                            <li >
+                                <a href="../ur5_2_controller/index.html">Ur5_2</a>
+                            </li>
+                            <li class="active">
+                                <a href="./">Ur5Moveit</a>
+                            </li>
+                            <li>
+                                <a href="../get_sheet/index.html">GetSheet</a>
+                            </li>
+                            <li>
+                                <a href="../node_action_server_ros_iot_bridge/index.html">Node Action Server</a>
+                            </li>
+                            <li >
+                                <a href="../pyiot/index.html">PyIot</a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#module-ur5_moveit">Module ur5_moveit</a></li>
+        <li class="main "><a href="#functions">Functions</a></li>
+        <li class="main "><a href="#classes">Classes</a></li>
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h2 id="module-ur5_moveit">Module ur5_moveit</h2>
+<p>This file contain Ur5Moveit class to control bot and rviz planning scene.</p>
+<h2 id="functions">Functions</h2>
+<p><b>define_joint_angle_list(shoulder_pan_joint, shoulder_lift_joint, elbow_joint, wrist_1_joint, wrist_2_joint, wrist_3_joint) : </b>
+    This function takes float values for each joint and returns a list.
+    :param shoulder_pan_joint: shoulder pan joint angle
+    :param shoulder_lift_joint: shoulder lift join angle
+    :param elbow_joint: elbow joint angle
+    :param wrist_1_joint: wrist 1 joint angle
+    :param wrist_2_joint: wrist 2 joint angle
+    :param wrist_3_joint: wrist 3 joint angle
+    :return: list of all joint angles</p>
+<p><b>define_pose(x, y, z) : </b>
+    This function define geometry_msgs.msg.Pose() from giving coordinates.
+    :param x: x coordinate
+    :param y: y coordinate
+    :param z: z coordinate
+    :return: ur5_pose of type geometry_msgs.msg.Pose() containing x,y,z coordinate.</p>
+<p><b>get_item_details(item) : </b>
+    This function finds packgen details using item
+    :param item: item is a string containing packgen content type
+    :return: it returns dict of details of packgen.</p>
+<h2 id="classes">Classes</h2>
+<p>Ur5Moveit
+    This class enables bot and rviz connection, and setup the configuration of ur5 bot.
+    Select bot name, planning group ,etc.</p>
+<pre><code>Ancestors (in MRO)
+------------------
+ur5_moveit.Ur5Moveit
+
+Instance variables
+------------------
+box_name
+
+group
+
+is_conver_active
+
+Methods
+-------
+__init__(self, robot_name)
+    Constructor
+    :param robot_name: name of bot which you want to control.
+
+add_box(self, x, y, z, b_name)
+    This function adds a box in rviz planning scene.
+    :param x: x coordinate of box
+    :param y: y coordinate of box
+    :param z: z coordinate of box
+    :param b_name: name to be given to the box in planning scene
+    :return: boolean
+
+attach_box(self, b_name, timeout=4)
+    This function attach to box with vacuum gripper in rviz planning scene to avoid collision
+    :param b_name:box name which needs to be attached.
+    :param timeout: time period
+    :return: boolean
+
+clear_octomap(self)
+
+detach_box(self, b_name, timeout=4)
+    This function detach to box from vacuum gripper in rviz planning scene to avoid collision
+    :param b_name:box name which needs to be detached.
+    :param timeout: time period
+    :return: boolean
+
+ee_cartesian_translation(self, trans_x, trans_y, trans_z)
+    This function helps in translating bot in x,y,z direction using cartesian coordinate system.
+    :param trans_x: Displacement in x direction.
+    :param trans_y: Displacement in y direction.
+    :param trans_z: Displacement in z direction.
+
+go_to_pose(self, arg_pose)
+    This function plans path to a pose and move ur5 to that pose.
+    :param arg_pose: pose of desired location of type geometry_msgs.msg.Pose()
+    :return: boolean
+
+hard_go_to_pose(self, arg_pose, arg_max_attempts)
+    This function calls go_to_pose() function multiple time until it succeed or reaches maximum attempt limit.
+    :param arg_pose: pose of desired location of type geometry_msgs.msg.Pose()
+    :param arg_max_attempts: maximum attempts for calling go_to_pose()
+    :return: boolean
+
+hard_set_joint_angles(self, arg_list_joint_angles, arg_max_attempts)
+    This function calls set_joint_angles() multiple times until it succeed or reaches maximum attempt limit
+    :param arg_list_joint_angles: list of all joint angles
+    :param arg_max_attempts: maximum attempt
+    :return: boolean
+
+remove_box(self, b_name, timeout=4)
+    This function removes box form rviz planning scene.
+    :param timeout: time period
+    :param b_name: name of box which need to be removed from  planning scene
+    :return: boolean
+
+set_joint_angles(self, arg_list_joint_angles)
+    This function sets angle of each joint of ur5 to reach a specific position.
+    :param arg_list_joint_angles: list of joints
+    :return: boolean
+
+trigger_converbelt(self, value)
+    this function sets belt speed using ros service
+    :param value: value of speed.
+    :return: null
+
+wait_for_state_update(self, box_is_known=False, box_is_attached=False, box_name='box', timeout=4)
+    Check status of box in rviz
+    :param timeout: time period
+    :param box_is_known: State of box
+    :param box_is_attached: State of box
+    :param box_name: Name of box in rviz
+    :return: boolean
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="None">
+
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <title>VB#1637</title>
+    <link href="css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="js/jquery-1.10.2.min.js" defer></script>
+    <script src="js/bootstrap-3.0.3.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+
+<body class="homepage">
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href=".">VB#1637</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="camera_one/index.html">CameraOne</a>
+                </li>
+                <li>
+                    <a href="get_sheet/index.html">GetSheet</a>
+                </li>
+                <li>
+                    <a href="iot_camera/index.html">IotCamera</a>
+                </li>
+                <li>
+                    <a href="ur5_1_controller/index.html">Ur5_1</a>
+                </li>
+                <li>
+                    <a href="ur5_2_controller/index.html">Ur5_2</a>
+                </li>
+                <li>
+                    <a href="ur5_moveit/index.html">Ur5Moveit</a>
+                </li>
+                <li>
+                    <a href="get_sheet/index.html">GetSheet</a>
+                </li>
+                <li>
+                    <a href="node_action_server_ros_iot_bridge/index.html">Node Action Server</a>
+                </li>
+                <li >
+                    <a href="pyiot/index.html">PyIot</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-md-3">
+        <div class="bs-sidebar hidden-print affix well" role="complementary">
+            <ul class="nav bs-sidenav">
+                <li class="main active"><a href="#documentation">Documentation</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-9" role="main">
+
+        <div>
+            <img src="./img/logo.svg"/>
+        </div>
+        <h3 id="documentation">Documentation</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/U_tq2A9RQg8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <article id="ee5c3c1f-069d-449b-9abc-f7674acafcaf" class="page sans">
+            <header><h1 class="page-title">Pkg_Task6</h1></header>
+            <div class="page-body"><h1 id="d79d42ca-0e57-44c7-b28e-2ac8941fcbfa" class="">Introduction</h1>
+                <p id="58023ea6-d7fe-4cfb-812e-825179d051fe" class="">We have simulated an automated warehouse in Gazebo
+                    consisting of UR5#1 and UR5#2 shipping packages of various priorities from the warehouse. The
+                    warehouse receives orders from the customer according to which the UR5_1 arm will pick the packages
+                    according to their priorities, high priority will be picked up first and placed on the conveyor belt
+                    followed by medium priority and then the lower priority packages. The UR5_2 Arm will pick the
+                    objects from a moving conveyor belt and segregate them according to the color corresponding bins.
+                    When the packages are placed into the bins, an alert email is sent using a ROS- IoT bridge to the
+                    customer about the shipment of packages from the warehouse</p>
+                <h1 id="ad64b632-c1f6-47f3-87e4-4af3b398b429" class="">Implementation</h1>
+                <p id="d03926e5-8964-4611-b101-84efcaa01e63" class="">We have created two different packages in order to
+                    accomplish the given task.</p>
+                <p id="40a584ad-087f-472f-a819-945e016c40a9" class=""><code> pkg_ros_iot_package </code> and <code>pkg_task6 </code>
+                </p>
+                <h1 id="b4f5b7fe-16b3-4493-92f2-18c427dea030" class="">pkg_ros_iot_package: </h1>
+                <p id="2bb0fe86-fe6b-47ba-ba68-545e450e1de6" class="">
+                </p>
+                <p id="f24c6ba9-6ce9-41e8-bbb0-2d6a64db8396" class="">This Package has internet connection and it
+                    connects to internet to push data to the Inventory Management System and fetch data from the
+                    Inventory Management System.</p>
+                <p id="c638c844-de5f-4b88-aeef-93adff0d130c" class="">pkg_task6 request pkg_ros_iot_package to complete
+                    its requirements of internet connection.</p>
+                <h2 id="cabce56d-d3ac-4d24-a286-8c9e500874f5" class="">structure </h2>
+                <ol id="cb845301-0afc-416b-9516-5fd262d34183" class="numbered-list" start="1">
+                    <li>action
+                        <ul id="c3742885-f6a2-41c5-be28-1478d1637094" class="bulleted-list">
+                            <li>msgRosIot.action</li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol id="03b61472-1893-4d05-a41f-8e3d290b5655" class="numbered-list" start="2">
+                    <li>config
+                        <ul id="83466b17-3854-48cb-a3cd-48043ebf58d2" class="bulleted-list">
+                            <li>config_pyiot.yaml</li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol id="7d0d6fe5-114a-494e-b3fb-0cfbd9cc7bf0" class="numbered-list" start="3">
+                    <li>msg
+                        <ul id="9a0280a0-a75a-4b14-a315-519b2064db46" class="bulleted-list">
+                            <li>msgMqttSub.msg</li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol id="965e8e00-e41e-485d-ba2f-d0c8c949fc98" class="numbered-list" start="4">
+                    <li>scripts
+                        <ul id="efbe47a2-322d-4a05-bfd6-64345a342be9" class="bulleted-list">
+                            <li>iot_client: This Module connects us with the Iot Server.</li>
+                        </ul>
+                        <ul id="ba2597bd-d2a5-4e18-ac05-25229f431ec2" class="bulleted-list">
+                            <li>pyiot: This module build connection with mqtt client.</li>
+                        </ul>
+                        <ul id="ae214b7c-7f52-4ef0-975f-47cdf4607447" class="bulleted-list">
+                            <li>node_action_server_ros_iot_bridge.py: This module helps in creating server which send
+                                data to sheet using mqtt.
+                            </li>
+                        </ul>
+                        <ul id="8f7fa64f-cf7c-4468-8735-7e2813f1061c" class="bulleted-list">
+                            <li>get_sheet.py : Used by server to fetch data form sheet.</li>
+                        </ul>
+                        <ul id="0b24e2f5-cca9-4f9f-951a-cad9662512bd" class="bulleted-list">
+                            <li>server_multi.py: Handles Ros Services</li>
+                        </ul>
+                        <ul id="60434d3a-7bf8-49c7-9f95-947f960970d3" class="bulleted-list">
+                            <li>server_multi_2.py: Handles fetching of data from sheets.</li>
+                        </ul>
+                        <p id="78b7fd25-e06e-494d-ae41-3fa9279a1901" class=""></p></li>
+                </ol>
+                <ol id="8f4576d7-b5ba-448b-b57f-84742f9be27e" class="numbered-list" start="5">
+                    <li>CMakeList.txt</li>
+                </ol>
+                <ol id="9ed59391-8cb3-4cdc-8009-85f115de1c6a" class="numbered-list" start="6">
+                    <li>package.xml</li>
+                </ol>
+                <p id="cccd1106-3724-4262-aa5b-3bc68856740b" class="">
+                </p>
+                <p id="49b354d0-be10-42be-a481-f466aa16dea0" class=""></p>
+                <h1 id="72068a2e-5cd7-4cde-bb7f-afeb8c02d94f" class="">pkg_task6</h1>
+                <p id="d478839f-a268-411d-b4fb-afc5252abee4" class="">This package controls both ur5_1 and ur5_2, ur5_1
+                    picks boxes from shelf and place on the belt and ur5_2 picks boxes from the belt and place in the
+                    bin.</p>
+                <h2 id="6f3d340e-30d1-4041-80f4-e9cdc25b1e25" class="">structure </h2>
+                <ol id="42c12047-0c4a-467c-b0e3-244ed2289cf9" class="numbered-list" start="1">
+                    <li>config
+                        <ul id="43543e6d-140a-49c5-889a-b576c2480b30" class="bulleted-list">
+                            <li>task6_bin.scene</li>
+                        </ul>
+                        <ul id="482fafc6-6d92-46b6-9199-8812111d78f8" class="bulleted-list">
+                            <li>task6_pod.scene.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol id="7496ab92-e114-4761-9cd1-10acd5d15105" class="numbered-list" start="2">
+                    <li>launch
+                        <ul id="ad787a98-5dc9-42d5-a004-34e8644da30a" class="bulleted-list">
+                            <li>task6_solution.launch</li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol id="b245ad6c-6812-461d-b2ff-a2f73ec20da1" class="numbered-list" start="3">
+                    <li>msg
+                        <ul id="4c9dafc1-f531-4335-8d20-a12c6b18656c" class="bulleted-list">
+                            <li>iotToBot1.msg</li>
+                        </ul>
+                        <ul id="5aa9b44a-65b5-4a7b-b2c1-79b4aa7f1f4e" class="bulleted-list">
+                            <li>OrderDetailArray.msg</li>
+                        </ul>
+                        <ul id="09925ead-f36f-40af-9de0-7215462faa04" class="bulleted-list">
+                            <li>serviceHandle.msg</li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol id="56ac3357-4545-401b-a443-afe5cf42ae6b" class="numbered-list" start="4">
+                    <li>scripts
+                        <ul id="cfcdcd31-e1bd-4cae-8ebb-2be42367b7f0" class="bulleted-list">
+                            <li>iot_client: This Module connects us with the Iot Server.</li>
+                        </ul>
+                        <ul id="3395e674-588c-474e-8bb3-55db2d922d38" class="bulleted-list">
+                            <li>ur5_moveit: This module configures rviz planning scene and ur5.</li>
+                        </ul>
+                        <ul id="f875bd4d-80c8-4f5a-8789-ecf9151d0477" class="bulleted-list">
+                            <li>camera_one : This module provides details of boxes in the shelf.</li>
+                        </ul>
+                        <ul id="fb26ca65-94c7-42a4-a48d-bf2a0896dde4" class="bulleted-list">
+                            <li>ur5_1_controller : Controls ur5_1 picking and placement operations.</li>
+                        </ul>
+                        <ul id="2c526721-0a24-4cb3-b32e-c73ad214192c" class="bulleted-list">
+                            <li>ur5_2_controller: Controls ur5_2 picking and placement operations and belt operations
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol id="c69eaa62-2615-4d6f-b776-5dab82a92e9b" class="numbered-list" start="5">
+                    <li>CMakeList.txt</li>
+                </ol>
+                <ol id="76bfc7d4-63a2-48c1-bcbb-a7507c01ff9a" class="numbered-list" start="6">
+                    <li>package.xml</li>
+                </ol>
+                <p id="e617a5d9-96af-4ac5-ad1d-133e2fc6fedc" class="">
+                </p>
+                <h1 id="8de7cf62-ea2a-4d52-bb92-ba3db65627cf" class="">How to Integrate:</h1>
+                <h2 id="24ee6fad-18de-45da-97e2-2065d70c0bae" class="">Configure pkg_ros_iot_bridge</h2>
+                <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css');</style>
+                <pre id="c9c8ccd3-5484-4f5c-8c94-a293f90fbc35" class="code"><code>place pkg<span
+                        class="token italic"><span class="token punctuation">_</span><span
+                        class="token content">ros</span><span class="token punctuation">_</span></span>iot_bridge in src folder of your workspace
+
+roscd pkg<span class="token italic"><span class="token punctuation">_</span><span class="token content">ros</span><span
+                            class="token punctuation">_</span></span>iot_bridge/config
+
+open config_pyiot.
+
+In line 8 and 9
+	topic<span class="token italic"><span class="token punctuation">_</span><span class="token content">sub : "/eyrc/vb/&lt;Unique Id>/orders"
+	topic</span><span class="token punctuation">_</span></span>pub : "eyrc/<span class="token tag"><span
+                            class="token tag"><span class="token punctuation">&lt;</span>Unique</span> <span
+                            class="token attr-name">Id</span><span class="token punctuation">></span></span>/ros<span
+                            class="token italic"><span class="token punctuation">_</span><span
+                            class="token content">to</span><span class="token punctuation">_</span></span>iot"
+
+change <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Unique</span> <span
+                            class="token attr-name">Id</span><span class="token punctuation">></span></span> to with your Unique Id
+</code></pre>
+                <h2 id="bbe6e666-04df-47b8-9208-1cea0e8b7854" class="">Configure pkg_task6</h2>
+                <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css');</style>
+                <pre id="869f4440-f0a2-4f0b-86ea-c1b03f8c4b5f" class="code"><code>place pkg_task6 in src folder of your workspace</code></pre>
+                <p id="4f7afb8d-b997-4f85-b433-d2ff3b57518b" class="">
+                </p>
+                <h2 id="c46f5062-5782-4cc1-8805-83a2c7a57042" class="">Build Workspace</h2>
+                <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css');</style>
+                <pre id="be303095-2a8b-4be1-ab23-912235b8ee5c" class="code"><code>cd your<span
+                        class="token italic"><span class="token punctuation">_</span><span
+                        class="token content">catkin</span><span class="token punctuation">_</span></span>workspace
+
+Run command:
+catkin build</code></pre>
+                <p id="ca2f598a-4ba2-45b0-8558-6e34802ae30e" class="">
+                </p>
+                <h2 id="d376115b-a525-4354-8ca7-674c162c11c2" class="">Steps To Start</h2>
+                <p id="36d60f3b-2710-44c5-bc28-0456ae0b993e" class="">
+                </p>
+                <ol id="4c508e72-fc4f-4b09-b40c-12838172aa53" class="numbered-list" start="1">
+                    <li>roslaunch pkg_task6 task6_solution.launch</li>
+                </ol>
+                <p id="d822985b-0509-4de0-bd5b-a3a44cf2a4de" class="">
+                </p></div>
+        </article>
+    </div>
+</div>
+
+<footer class="col-md-12">
+    <hr>
+    <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script>
+    var base_url = ".",
+        shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+</script>
+<script src="js/base.js" defer></script>
+<script src="search/main.js" defer></script>
+
+<div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="Search">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query"
+                               title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th style="width: 20%;">Keys</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="help shortcut"><kbd>?</kbd></td>
+                        <td>Open this help</td>
+                    </tr>
+                    <tr>
+                        <td class="next shortcut"><kbd>n</kbd></td>
+                        <td>Next page</td>
+                    </tr>
+                    <tr>
+                        <td class="prev shortcut"><kbd>p</kbd></td>
+                        <td>Previous page</td>
+                    </tr>
+                    <tr>
+                        <td class="search shortcut"><kbd>s</kbd></td>
+                        <td>Search</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2021-02-24 15:41:03
+-->
