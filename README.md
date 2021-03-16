@@ -1,7 +1,7 @@
 # Eyantra_Virgi-bot
 Eyantra 2021 project theme Virgi Bot
 
-### Detail Documentation is at:https://htmlpreview.github.io/?https://github.com/1arshan/Eyantra_Virgi-bot/documentation/index.html 
+### Detail Documentation is at:https://htmlpreview.github.io/?https://github.com/1arshan/Eyantra_Virgi-bot/blob/main/documentation/index.html 
 
 ### Project Working Video: https://www.youtube.com/watch?v=ZQNKmDvd1Eg
 
