@@ -1,0 +1,1 @@
+string bot_state
