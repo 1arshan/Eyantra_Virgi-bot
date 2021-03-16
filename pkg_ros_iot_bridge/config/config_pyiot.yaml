@@ -1,0 +1,56 @@
+# config_pyiot.yaml 
+# IoT Configuration
+config_iot:
+  mqtt:
+    server_url: "broker.mqttdashboard.com"        # http://www.hivemq.com/demos/websocket-client/
+    # server_url: "test.mosquitto.org"			  # Alternative to HiveMQ
+    server_port: 1883
+    topic_sub: "/eyrc/vb/VBfetjmm/orders"          #to take order
+    topic_pub: "eyrc/VBfetjmm/ros_to_iot"          # <unique_id> = VBfetjmi
+    qos: 0
+
+    sub_cb_ros_topic: "/ros_iot_bridge/mqtt/sub"   # ROS nodes can listen to this topic to receive data from IOTBridge
+  google_apps:
+
+    #spread_sheet_id: "AKfycbyPSHGPtOd14md_iLFlidY3xjdgTxX3Rd4QNHkPfoy_tT8mqMSCFwuz"  #1637vbeyrc@gmail.com
+    #spread_sheet_id: "AKfycbxjdWJnCsVScdIMvMzosfoDHhY-idCFVi5dqY3j41oA83v0wNV2gpuk" #vb1637eyrc@gmail.com
+    # spread_sheet_id: "AKfycbyIWQueLBnXjjgLT9ParrDkDXnuRkOpnrhj4SC4lWumjcFQiJ_IlZYu"  ##eyrc.vb.1637@gmail.com
+    spread_sheet_id: "AKfycbw5xylppoda-8HPjt2Tzq4ShU_Xef-Ik-hEtBPcPk0gdGw8095j4RZ7" #eyantra
+  keys:
+    Inventory: 
+      - SKU
+      - Item
+      - Priority
+      - Storage Number
+      - Cost
+      - Quantity
+    IncomingOrders:
+      - Order ID
+      - Order Date and Time
+      - Item
+      - Priority
+      - Order Quantity
+      - City
+      - Longitude
+      - Latitude
+      - Cost
+    OrdersDispatched:
+      - Order ID
+      - City
+      - Item
+      - Priority
+      - Dispatch Quantity
+      - Cost
+      - Dispatch Status
+      - Dispatch Date and Time
+    OrdersShipped:
+      - Order ID
+      - City
+      - Item
+      - Priority
+      - Shipped Quantity
+      - Cost
+      - Shipped Status
+      - Shipped Date and Time
+      - Estimated Time of Delivery
+      - deliveryIn
