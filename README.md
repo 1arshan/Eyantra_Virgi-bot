@@ -16,7 +16,7 @@ Project theme: Virgi Bot(WareHouse Automation)
 <img src="/image_readme/bot2.png">
 <p align="center">Overview of simulation scene</p>
 
-Our work:
+## Our work :
 ### 1. Making Inventory :
 Every item in warehouse has a QR code on it so by using camera and pyzbar(python library for decoding QR code) update inventory sheet on GSheet.
 
