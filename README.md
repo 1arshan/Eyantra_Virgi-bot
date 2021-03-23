@@ -3,7 +3,7 @@ Eyantra 2021
 
 Project theme: Virgi Bot(WareHouse Automation)
 
-#### Documentation:https://htmlpreview.github.io/?https://github.com/1arshan/Eyantra_Virgi-bot/blob/main/documentation/index.html   (If UI of documentaion is not properly showing please wait for 2 min or else clone this repo and open index.html in documentation folder)
+#### Documentation:https://htmlpreview.github.io/?https://github.com/1arshan/Eyantra_Virgi-bot/blob/main/documentation/index.html   (If UI of documentaion is not properly showing please wait for 2 min or clone this repo and open index.html present in documentation folder)
 
 
 
